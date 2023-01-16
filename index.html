@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Email Signature</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="person">
+      <h3>{{name}}</h3>
+      <h4>{{job title}}</h4>
+      <h5><a class="link">{{e-mail}}@bimms.net</a> | (+{{extension}}) {{phone number: 123 456 789}}</h5>
+    </div>
+    <div id="logo">
+      <h1>BIM<span class="colored-logo">MS</span></h1>
+      <h2>integrated <span class="colored-logo">engineer</span>ing</h2>
+    </div>
+    <div id="company">
+      <a class="link" href="tel:+351220982222" cm_dontconvertlink>
+        <h5>(+351) 220 982 222</h5>
+      </a>
+      <a class="link" href="https://www.google.com/search?q=+5937%2B3C+Porto">
+        <h5>5937+3C Porto</h5>
+      </a>
+      <a class="link" href="www.bimms.net">
+        <h5>www.bimms.net</h5>
+      </a>
+      <a class="link" href="www.linkedin.com/company/bimms">
+        <h5>www.linkedin.com/company/bimms</h5>
+      </a>
+    </div>
+    <style>
+      :root {
+        --color-primary: #6fc3c0;
+        --text-color-light: #ffffff;
+        --text-color-dark: #000000;
+        --text-color: #000000;
+        --text-size-extra-small: 8px;
+        --text-size-small: 10px;
+        --text-size-medium: 11px;
+        --text-size-large: 13px;
+        --text-size-huge: 34px;
+      }
+
+      /* #region reset */
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      body {
+        line-height: 1;
+      }
+      /* #endregion reset */
+      * {
+        text-decoration: none;
+      }
+      body {
+        font-family: Inter, Verdana, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: var(--text-size-extra-small);
+        color: var(--text-color);
+        height: max-content;
+        display: flex;
+        gap: 20px;
+        padding: 28px;
+      }
+      body > div {
+        height: 100%;
+      }
+      h1 {
+        font-weight: 900;
+        font-size: var(--text-size-huge);
+      }
+      h2 {
+        font-size: var(--text-size-medium);
+      }
+      h3 {
+        font-weight: 100;
+        font-size: var(--text-size-large);
+      }
+      h4 {
+        font-weight: 700;
+        font-size: var(--text-size-medium);
+      }
+      .link {
+        text-decoration: none;
+        color: var(--text-color);
+      }
+      #company {
+        padding: 4px 0 1px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+      }
+      .colored-logo {
+        font-size: inherit;
+        font-weight: inherit;
+        color: var(--color-primary);
+      }
+      @media only screen and (max-width: 600px) {
+        body {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </body>
+</html>
