@@ -1,197 +1,137 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- Scroll down to <script> and edit the values inside "const data" -->
+<!-- Further instructions are provided there -->
+
+<!DOCTYPE html>
 <html>
   <head>
     <title>Email Signature</title>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
   </head>
-  <body>
-    <div id="person">
-      <h3>{{name}}</h3>
-      <h4>{{job title}}</h4>
-      <h5><a class="link">{{e-mail}}@bimms.net</a> | (+{{extension}}) {{phone number: 123 456 789}}</h5>
-    </div>
-    <div id="logo">
-      <h1>BIM<span class="colored-logo">MS</span></h1>
-      <h2>integrated <span class="colored-logo">engineer</span>ing</h2>
-    </div>
-    <div id="company">
-      <a class="link" href="tel:+351220982222" cm_dontconvertlink>
-        <h5>(+351) 220 982 222</h5>
-      </a>
-      <a class="link" href="https://www.google.com/search?q=+5937%2B3C+Porto">
-        <h5>5937+3C Porto</h5>
-      </a>
-      <a class="link" href="www.bimms.net">
-        <h5>www.bimms.net</h5>
-      </a>
-      <a class="link" href="www.linkedin.com/company/bimms">
-        <h5>www.linkedin.com/company/bimms</h5>
-      </a>
-    </div>
-    <style>
-      :root {
-        --color-primary: #6fc3c0;
-        --text-color-light: #ffffff;
-        --text-color-dark: #000000;
-        --text-color: #000000;
-        --text-size-extra-small: 8px;
-        --text-size-small: 10px;
-        --text-size-medium: 11px;
-        --text-size-large: 13px;
-        --text-size-huge: 34px;
-      }
-
-      /* #region reset */
-      html,
-      body,
-      div,
-      span,
-      applet,
-      object,
-      iframe,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p,
-      blockquote,
-      pre,
-      a,
-      abbr,
-      acronym,
-      address,
-      big,
-      cite,
-      code,
-      del,
-      dfn,
-      em,
-      img,
-      ins,
-      kbd,
-      q,
-      s,
-      samp,
-      small,
-      strike,
-      strong,
-      sub,
-      sup,
-      tt,
-      var,
-      b,
-      u,
-      i,
-      center,
-      dl,
-      dt,
-      dd,
-      ol,
-      ul,
-      li,
-      fieldset,
-      form,
-      label,
-      legend,
-      table,
-      caption,
-      tbody,
-      tfoot,
-      thead,
-      tr,
-      th,
-      td,
-      article,
-      aside,
-      canvas,
-      details,
-      embed,
-      figure,
-      figcaption,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      output,
-      ruby,
-      section,
-      summary,
-      time,
-      mark,
-      audio,
-      video {
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      line-height: 1;
+      text-decoration: none;
+      box-sizing: border-box;
+    "
+  >
+    <div
+      style="
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
+        border: 0;
         border: 0;
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
-      }
-      body {
-        line-height: 1;
-      }
-      /* #endregion reset */
-      * {
+        display: block;
         text-decoration: none;
-      }
-      body {
-        font-family: Inter, Verdana, Helvetica, sans-serif;
         font-weight: 400;
-        font-size: var(--text-size-extra-small);
-        color: var(--text-color);
-        height: max-content;
-        display: flex;
-        gap: 20px;
-        padding: 28px;
-      }
-      body > div {
-        height: 100%;
-      }
-      h1 {
-        font-weight: 900;
-        font-size: var(--text-size-huge);
-      }
-      h2 {
-        font-size: var(--text-size-medium);
-      }
-      h3 {
-        font-weight: 100;
-        font-size: var(--text-size-large);
-      }
-      h4 {
-        font-weight: 700;
-        font-size: var(--text-size-medium);
-      }
-      .link {
-        text-decoration: none;
-        color: var(--text-color);
-      }
-      #person, #company {
-        padding: 4px 0 1px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        font-size: 11px;
+        color: #323232;
         height: auto;
-      }
-      .colored-logo {
-        font-size: inherit;
-        font-weight: inherit;
-        color: var(--color-primary);
-      }
-      @media only screen and (max-width: 600px) {
-        body {
-          flex-direction: column;
-        }
-      }
-    </style>
+        font-family: Gadugi, Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        padding: 8px 8px 4px 8px;
+        background-color: #FFFFFF;
+      "
+    >
+      <div id="person" style="display: grid; align-items: center; margin: 2px 20px 8px 0; height: 53px;">
+        <h3
+          id="name"
+          style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 100; font-size: 13pt"
+        ></h3>
+        <h4 id="job-title" style="margin: 0; padding: 0; border: 0; font-weight: 700; font-size: 10pt"></h4>
+        <h5 style="margin: 0; padding: 0; border: 0; font-weight: 400; font-size: 9pt">
+          <a style="text-decoration: none; color: #323232" id="personal-email"></a> |
+          <a style="text-decoration: none; color: #323232" cm_dontconvertlink id="personal-phone-number"></a>
+        </h5>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        <div id="logo" style="display: grid; align-items: center; margin-right: 10px; margin-bottom: 8px;">
+          <h1
+            style="
+              margin: 0;
+              padding: 0;
+              border: 0;
+              border: 0;
+              line-height: 1;
+              font-weight: 900;
+              font-size: 30pt;
+              font-family: Arial, sans-serif;
+            "
+          >
+            BIM<span style="font-size: inherit; font-weight: inherit; color: #6fc3c0">MS</span>
+          </h1>
+          <h2 style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-size: 10pt; font-weight: 500">
+            integrated <span style="font-size: inherit; font-weight: inherit; color: #6fc3c0">engineer</span>ing
+          </h2>
+        </div>
+        <div id="company" style="display: grid; align-items: center; margin-top: 4px; height: 53px;">
+          <a style="text-decoration: none; color: #323232" href="tel:+351220982222" cm_dontconvertlink>
+            <h5 style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 400; font-size: 8.5pt">
+              (+351) 220 982 222
+            </h5>
+          </a>
+          <a
+            style="text-decoration: none; color: #323232"
+            href="https://www.google.com/maps/place/8CHH5937%2B3C/@41.1524796,-8.6386171,16.75z/data=!4m5!3m4!1s0x0:0x11e14ef0fa42a3f9!8m2!3d41.1526875!4d-8.6364375"
+            target="_blank"
+          >
+            <h5 style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 400; font-size: 8.5pt">
+              5937+3C Porto
+            </h5>
+          </a>
+          <a style="text-decoration: none; color: #323232" href="https://www.bimms.net" target="_blank">
+            <h5 style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 400; font-size: 8.5pt">
+              www.bimms.net
+            </h5>
+          </a>
+          <a style="text-decoration: none; color: #323232;" href="https://www.linkedin.com/company/bimms" target="_blank">
+            <h5 style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 400; font-size: 8.5pt">
+              www.linkedin.com/company/bimms
+            </h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      //
+      // Edit values below with the ones to show in your e-mail signature
+      // Anyting you write inside quotation marks will be what is displayed in your signiture. This includes any spaces or other characters
+      // ATTENTION: When editing the values, don't remove the quotation marks (") before and after the value you insert in
+      //
+
+      const data = {
+        name: "John Doe", // Name
+        jobTitle: "Software Development", // Job title description
+        email: "email@bimms.net", // E-mail address
+        phoneNumber: "123456789", // Phone number, without prefix or extentions
+        countryPrefix: "+351", // Phone number's country prefix, including the + at the start
+      };
+
+      //
+      //////
+
+      const nameEl = document.getElementById("name");
+      nameEl.textContent = data.name + ",";
+
+      const jobEl = document.getElementById("job-title");
+      jobEl.textContent = data.jobTitle;
+
+      const emailEl = document.getElementById("personal-email");
+      emailEl.textContent = data.email;
+      emailEl.href = `mailto:${data.email}`;
+
+      const phoneEl = document.getElementById("personal-phone-number");
+      phoneEl.textContent = `(${data.countryPrefix}) ${data.phoneNumber}`;
+      phoneEl.href = `tel:${data.countryPrefix}${data.phoneNumber}`;
+    </script>
   </body>
 </html>
