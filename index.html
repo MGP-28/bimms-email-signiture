@@ -47,14 +47,15 @@
         "
       >
         <td style="display: grid">
-          <span
-            id="name"
-            style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 100; font-size: 13pt"
-          ></span>
-          <span id="job-title" style="margin: 0; padding: 0; border: 0; font-weight: 700; font-size: 10pt"></span>
+          <span id="name" style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-weight: 100; font-size: 13pt"
+            >[BIMMS NAME]</span
+          >
+          <span id="job-title" style="margin: 0; padding: 0; border: 0; font-weight: 700; font-size: 10pt">[BIMMS JOB]</span>
           <span style="margin: 0; padding: 0; border: 0; font-weight: 400; font-size: 9pt">
-            <a style="text-decoration: none; color: #323232" id="personal-email"></a> |
-            <a style="text-decoration: none; color: #323232" cm_dontconvertlink id="personal-phone-number"></a>
+            <a style="text-decoration: none; color: #323232" id="personal-email">[BIMMS EMAIL]</a> |
+            <a style="text-decoration: none; color: #323232" cm_dontconvertlink id="personal-phone-number"
+              >[BIMMS PHONE NUMBER]</a
+            >
           </span>
         </td>
       </tr>
@@ -110,7 +111,7 @@
             href="tel:+351220982222"
             cm_dontconvertlink
           >
-            (+351) 220 982 222
+            [BIMMS LINK](+351) 220 982 222
           </a>
           <a
             style="
@@ -127,7 +128,7 @@
             href="https://www.google.com/maps/place/8CHp937%2B3C/@41.1524796,-8.6386171,16.75z/data=!4m5!3m4!1s0x0:0x11e14ef0fa42a3f9!8m2!3d41.1526875!4d-8.6364375"
             target="_blank"
           >
-            5937+3C Porto
+            [BIMMS LINK]5937+3C Porto
           </a>
           <a
             style="
@@ -144,7 +145,7 @@
             href="https://www.bimms.net"
             target="_blank"
           >
-            www.bimms.net
+            [BIMMS LINK]www.bimms.net
           </a>
           <a
             style="
@@ -161,13 +162,13 @@
             href="https://www.linkedin.com/company/bimms"
             target="_blank"
           >
-            LinkedIn
+            [BIMMS LINK]LinkedIn
           </a>
         </td>
       </tr>
     </table>
   </body>
-  <script>
+  <!-- <script>
     //
     // Edit values below with the ones to show in your e-mail signature
     // Anyting you write inside quotation marks will be what is displayed in your signiture. This includes any spaces or other characters
@@ -198,5 +199,39 @@
     const phoneEl = document.getElementById("personal-phone-number");
     phoneEl.textContent = `(${data.countryPrefix}) ${data.phoneNumber}`;
     phoneEl.href = `tel:${data.countryPrefix}${data.phoneNumber}`;
+  </script> -->
+  <script>
+    const data = {
+      name: "John Doe", // Name
+      jobTitle: "Software Development", // Job title description
+      email: "email@bimms.net", // E-mail address
+      phoneNumber: "123456789", // Phone number, without prefix or extentions
+      countryPrefix: "+351", // Phone number's country prefix, including the + at the start
+    };
+
+    function formatSignature(data) {
+      const contents = ["[BIMMS NAME]", "[BIMMS JOB]"]
+      const spans = Array.from(document.getElementsByTagName("span"));
+      const bimmsSpans = spans.filter((x) => contents.includes(x.textContent));
+      bimmsSpans.forEach((element) => {
+        if (element.textContent == contents[0]) element.textContent = data.name + ",";
+        if (element.textContent == contents[1]) element.textContent = data.jobTitle;
+      });
+
+      const links = [...document.getElementsByTagName("a")];
+      const bimmsLinks = links.filter((x) => x.textContent.includes("BIMMS"));
+      for (let idx = 0; idx < bimmsLinks.length; idx++) {
+        const linkEl = bimmsLinks[idx];
+        linkEl.style.textDecoration = "none";
+        linkEl.style.color = "#323232";
+        linkEl.textContent = linkEl.textContent.replace("[BIMMS LINK]", "")
+      }
+      const emailEl = links.find((x) => x.textContent == "[BIMMS EMAIL]");
+      emailEl.textContent = data.email;
+      emailEl.href = `mailto:${data.email}`;
+      const phoneEl = links.find((x) => x.textContent == "[BIMMS PHONE NUMBER]");
+      phoneEl.textContent = `(${data.countryPrefix}) ${data.phoneNumber}`;
+      phoneEl.href = `tel:${data.countryPrefix}${data.phoneNumber}`;
+    }
   </script>
 </html>
