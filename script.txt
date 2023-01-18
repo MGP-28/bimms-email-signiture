@@ -1,0 +1,54 @@
+const data = {
+  //
+  // EDIT VALUES BELOW
+  //
+  // Edit values below with the ones to show in your e-mail signature
+  // Anyting you write inside quotation marks will be what is displayed in your signiture. 
+  // This includes any spaces or other characters
+  //
+  // ATTENTION: When editing the values, 
+  // don't remove the quotation marks (") before and after the value you insert in
+  //
+
+  name: "João Pereira", // Name
+  jobTitle: "Software Development", // Job title description
+  email: "jpereirax@bimms.net", // E-mail address
+  phoneNumber: "123456789", // Phone number, without prefix or extentions
+  countryPrefix: "+351", // Phone number's country prefix, including the + at the start
+
+  //
+  // EDIT VALUES ABOVE
+  //
+};
+function fs(data) {
+  const contents = ["[BIMMS NAME]", "[BIMMS JOB]"];
+  const spans = Array.from(document.getElementsByTagName("p"));
+  const bimmsSpans = spans.filter((x) => {
+    let result = x.textContent.match(/\[(.*?)\]/);
+    if (!result) return false;
+    const isLookedFor = contents.includes(result[0]);
+    if (!isLookedFor) return false;
+    x.textContent = result[0];
+    return true;
+  });
+  bimmsSpans.forEach((element) => {
+    if (element.textContent == contents[0]) element.textContent = data.name + ",";
+    if (element.textContent == contents[1]) element.textContent = data.jobTitle;
+  });
+
+  const links = [...document.getElementsByTagName("a")];
+  const bimmsLinks = links.filter((x) => x.textContent.includes("BIMMS"));
+  for (let idx = 0; idx < bimmsLinks.length; idx++) {
+    const linkEl = bimmsLinks[idx];
+    linkEl.style.textDecoration = "none";
+    linkEl.style.color = "#323232";
+    linkEl.textContent = linkEl.textContent.replace("[BIMMS LINK]", "");
+  }
+  const emailEl = links.find((x) => x.textContent == "[BIMMS EMAIL]");
+  emailEl.textContent = data.email;
+  emailEl.href = `mailto:${data.email}`;
+  const phoneEl = links.find((x) => x.textContent == "[BIMMS PHONE NUMBER]");
+  const phoneNumberFormatted = data.phoneNumber.match(/.{1,3}/g).join(" ");
+  phoneEl.textContent = `(${data.countryPrefix}) ${phoneNumberFormatted}`;
+  phoneEl.href = `tel:${data.countryPrefix}${data.phoneNumber}`;
+}

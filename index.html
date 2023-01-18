@@ -1,11 +1,3 @@
-<!-- Go to "EDIT VALUES HERE" and, below, you can insert the name, email, etc you want to show in the signature -->
-<!-- Open this file in the browser and copy all contents in the page (CTRL + A, CTRL + C) -->
-<!-- Go to the Outlook web app and create a new signature -->
-<!-- Paste the contents copied in the first step -->
-<!-- Open the browser console (F12) and go into console -->
-<!-- Copy the content between "START COPY HERE" and "END COPY HERE" in this page, paste it into the web console and hit ENTER -->
-<!-- Type "fs(data)" without quotation marks into the browser console and hit ENTER -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,51 +7,6 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      //
-      // START COPY HERE
-      //
-      const data = {
-        //
-        // EDIT VALUES HERE
-        //
-        // Edit values below with the ones to show in your e-mail signature
-        // Anyting you write inside quotation marks will be what is displayed in your signiture. This includes any spaces or other characters
-        // ATTENTION: When editing the values, don't remove the quotation marks (") before and after the value you insert in
-        name: "John Doe", // Name
-        jobTitle: "Software Development", // Job title description
-        email: "email@bimms.net", // E-mail address
-        phoneNumber: "123456789", // Phone number, without prefix or extentions
-        countryPrefix: "+351", // Phone number's country prefix, including the + at the start
-      };
-      function fs(data) {
-        const contents = ["[BIMMS NAME]", "[BIMMS JOB]"];
-        const spans = Array.from(document.getElementsByTagName("p"));
-        const bimmsSpans = spans.filter((x) => contents.includes(x.textContent));
-        bimmsSpans.forEach((element) => {
-          if (element.textContent == contents[0]) element.textContent = data.name + ",";
-          if (element.textContent == contents[1]) element.textContent = data.jobTitle;
-        });
-
-        const links = [...document.getElementsByTagName("a")];
-        const bimmsLinks = links.filter((x) => x.textContent.includes("BIMMS"));
-        for (let idx = 0; idx < bimmsLinks.length; idx++) {
-          const linkEl = bimmsLinks[idx];
-          linkEl.style.textDecoration = "none";
-          linkEl.style.color = "#323232";
-          linkEl.textContent = linkEl.textContent.replace("[BIMMS LINK]", "");
-        }
-        const emailEl = links.find((x) => x.textContent == "[BIMMS EMAIL]");
-        emailEl.textContent = data.email;
-        emailEl.href = `mailto:${data.email}`;
-        const phoneEl = links.find((x) => x.textContent == "[BIMMS PHONE NUMBER]");
-        phoneEl.textContent = `(${data.countryPrefix}) ${data.phoneNumber}`;
-        phoneEl.href = `tel:${data.countryPrefix}${data.phoneNumber}`;
-      }
-      //
-      // END COPY HERE
-      //
-    </script>
     <table
       style="
         display: block;
@@ -86,6 +33,7 @@
       "
     >
       <tr
+        colspan="2"
         style="
           margin: 0;
           padding: 0;
@@ -112,119 +60,123 @@
           </p>
         </td>
       </tr>
-      <tr
-        style="
-          display: flex;
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          border: 0;
-          border: 0;
-          font-size: 100%;
-          font: inherit;
-          vertical-align: baseline;
-          border-collapse: collapse;
-          border-spacing: 0;
-          text-decoration: none;
-        "
-      >
-        <td id="logo" style="display: grid; align-items: center; margin-right: 10px; margin-bottom: 8px">
-          <p
+      <tr>
+        <td>
+          <table>
+            <tr
             style="
-              margin: 0;
-              padding: 0;
-              border: 0;
-              border: 0;
-              line-height: 1;
-              font-weight: 900;
-              font-size: 30pt;
-              font-family: Arial, sans-serif;
-              letter-spacing: -2px;
-            "
-          >
-            BIM<span style="font-size: inherit; font-weight: inherit; color: #6fc3c0">MS</span>
-          </p>
-          <p style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-size: 10.3pt; font-weight: 500">
-            integrated <span style="font-size: inherit; font-weight: inherit; color: #6fc3c0">engineer</span>ing
-          </p>
-        </td>
-        <td id="company" style="display: grid; align-items: center; margin-top: 4px; height: 53px">
-          <p style="margin: 0; padding: 0; border: 0; line-height: 1">
-            <a
-              style="
-                margin: 0;
-                padding: 0;
-                border: 0;
-                border: 0;
-                line-height: 1;
-                font-weight: 400;
-                font-size: 8.5pt;
-                text-decoration: none;
-                color: #323232;
-              "
-              href="tel:+351220982222"
-              cm_dontconvertlink
-            >
-              [BIMMS LINK](+351) 220 982 222
-            </a>
-          </p>
-          <p style="margin: 0; padding: 0; border: 0; line-height: 1">
-            <a
-              style="
-                margin: 0;
-                padding: 0;
-                border: 0;
-                border: 0;
-                line-height: 1;
-                font-weight: 400;
-                font-size: 8.5pt;
-                text-decoration: none;
-                color: #323232;
-              "
-              href="https://www.google.com/maps/place/8CHp937%2B3C/@41.1524796,-8.6386171,16.75z/data=!4m5!3m4!1s0x0:0x11e14ef0fa42a3f9!8m2!3d41.1526875!4d-8.6364375"
-              target="_blank"
-            >
-              [BIMMS LINK]5937+3C Porto
-            </a>
-          </p>
-          <p style="margin: 0; padding: 0; border: 0; line-height: 1">
-            <a
-              style="
-                margin: 0;
-                padding: 0;
-                border: 0;
-                border: 0;
-                line-height: 1;
-                font-weight: 400;
-                font-size: 8.5pt;
-                text-decoration: none;
-                color: #323232;
-              "
-              href="https://www.bimms.net"
-              target="_blank"
-            >
-              [BIMMS LINK]www.bimms.net
-            </a>
-          </p>
-          <p style="margin: 0; padding: 0; border: 0; line-height: 1">
-            <a
-              style="
-                margin: 0;
-                padding: 0;
-                border: 0;
-                border: 0;
-                line-height: 1;
-                font-weight: 400;
-                font-size: 8.5pt;
-                text-decoration: none;
-                color: #323232;
-              "
-              href="https://www.linkedin.com/company/bimms"
-              target="_blank"
-            >
-              [BIMMS LINK]LinkedIn
-            </a>
-          </p>
+            display: flex;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-decoration: none;
+          ">
+              <td id="logo" style="display: grid; align-items: center; margin-right: 10px; margin-bottom: 8px">
+                <p
+                  style="
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    border: 0;
+                    line-height: 1;
+                    font-weight: 900;
+                    font-size: 30pt;
+                    font-family: 'Arial Black', Arial, sans-serif;
+                    letter-spacing: -2px;
+                  "
+                >
+                    BIM<span style="font-size: inherit; font-weight: inherit; color: #6fc3c0">MS</span>
+                </p>
+                <p style="margin: 0; padding: 0; border: 0; border: 0; line-height: 1; font-size: 9pt; font-weight: 500; font-family: 'Arial Black', Arial, sans-serif;">integrated <span style="font-size: inherit; font-weight: inherit; color: #6fc3c0">engineer</span>ing
+                </p>
+              </td>
+              <td id="company" style="display: grid; align-items: center; margin-top: 4px; height: 53px">
+                <p style="margin: 0; padding: 0; border: 0; line-height: 1">
+                  <a
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      border: 0;
+                      border: 0;
+                      line-height: 1;
+                      font-weight: 400;
+                      font-size: 8.5pt;
+                      text-decoration: none;
+                      color: #323232;
+                    "
+                    href="tel:+351220982222"
+                    cm_dontconvertlink
+                  >
+                    [BIMMS LINK](+351) 220 982 222
+                  </a>
+                </p>
+                <p style="margin: 0; padding: 0; border: 0; line-height: 1">
+                  <a
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      border: 0;
+                      border: 0;
+                      line-height: 1;
+                      font-weight: 400;
+                      font-size: 8.5pt;
+                      text-decoration: none;
+                      color: #323232;
+                    "
+                    href="https://www.google.com/maps/place/8CHp937%2B3C/@41.1524796,-8.6386171,16.75z/data=!4m5!3m4!1s0x0:0x11e14ef0fa42a3f9!8m2!3d41.1526875!4d-8.6364375"
+                    target="_blank"
+                  >
+                    [BIMMS LINK]5937+3C Porto
+                  </a>
+                </p>
+                <p style="margin: 0; padding: 0; border: 0; line-height: 1">
+                  <a
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      border: 0;
+                      border: 0;
+                      line-height: 1;
+                      font-weight: 400;
+                      font-size: 8.5pt;
+                      text-decoration: none;
+                      color: #323232;
+                    "
+                    href="https://www.bimms.net"
+                    target="_blank"
+                  >
+                    [BIMMS LINK]www.bimms.net
+                  </a>
+                </p>
+                <p style="margin: 0; padding: 0; border: 0; line-height: 1">
+                  <a
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      border: 0;
+                      border: 0;
+                      line-height: 1;
+                      font-weight: 400;
+                      font-size: 8.5pt;
+                      text-decoration: none;
+                      color: #323232;
+                    "
+                    href="https://www.linkedin.com/company/bimms"
+                    target="_blank"
+                  >
+                    [BIMMS LINK]LinkedIn
+                  </a>
+                </p>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>
