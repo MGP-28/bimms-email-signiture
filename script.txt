@@ -1,6 +1,6 @@
 const data = {
   //
-  // EDIT VALUES BELOW
+  //// EDIT VALUES BELOW
   //
   // Edit values below with the ones to show in your e-mail signature
   // Anyting you write inside quotation marks will be what is displayed in your signiture. 
@@ -10,14 +10,14 @@ const data = {
   // don't remove the quotation marks (") before and after the value you insert in
   //
 
-  name: "João Pereira", // Name
-  jobTitle: "Software Development", // Job title description
-  email: "jpereirax@bimms.net", // E-mail address
-  phoneNumber: "123456789", // Phone number, without prefix or extentions
+  name: "Joana Santos", // Name
+  jobTitle: "Communication & Image", // Job title description
+  email: "jsantos@bimms.net", // E-mail address
+  phoneNumber: "927587553", // Phone number, without prefix or extentions
   countryPrefix: "+351", // Phone number's country prefix, including the + at the start
 
   //
-  // EDIT VALUES ABOVE
+  //// EDIT VALUES ABOVE
   //
 };
 function fs(data) {
