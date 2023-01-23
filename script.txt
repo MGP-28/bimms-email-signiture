@@ -1,0 +1,11 @@
+function cl() {
+  const parameter = "[BIMMS-LINK]";
+  const links = Array.from(document.getElementsByTagName("a"));
+  const bimmsLinks = links.filter((x) => x.textContent.includes(parameter));
+  for (let idx = 0; idx < bimmsLinks.length; idx++) {
+    const linkEl = bimmsLinks[idx];
+    linkEl.style.textDecoration = "none";
+    linkEl.style.color = "#323232";
+    linkEl.textContent = linkEl.textContent.replace(parameter, "");
+  }
+}
