@@ -8,7 +8,7 @@ Create a new signature
 Create a new signature
 
 Go to https://mgp-28.github.io/bimms-email-signiture/, fill the fields and generate signature
-NOTE: Some fields will have a "[BIMMS-LINK]" tag. Don't worry, they will be removed automatically later
+NOTE: Some fields will have a "[BIMMS]" or similar tag. Don't worry, they will be removed AUTOMAITCALLY later
 Copy all contents in the webpage (CTRL + A, CTRL + C)
 
 Paste the contents copied in the new signiture
