@@ -450,7 +450,7 @@
         const phoneEl = document.getElementById("bimms-phone");
         const phoneInput = document.getElementById("phone").value;
         const prefixInput = document.getElementById("prefix").value;
-        phoneEl.ref = `${prefixInput}${phoneInput}`;
+        phoneEl.ref = `tel:${prefixInput}${phoneInput}`;
         const phoneNumberFormatted = phoneInput.match(/.{1,3}/g).join(" ");
         phoneEl.textContent = `${prefixInput} ${phoneNumberFormatted}`;
 
