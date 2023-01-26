@@ -1,5 +1,15 @@
 ATTENTION: Disable any dark mode extentions in your browser
 
+First you need to configure the outlook of the company user
+
+Click on the Start button and type Outlook into the search field;
+Click on File and then on Option; 
+Click Email and find the Message Format option;
+Uncheck the options:
+Use CSS(cascading style sheets)in the appearance of messages.
+Reduce the size of the message by removing format information that is not necessary to display the message.
+Click Ok;
+
 Go to the Outlook in a web browser and login
 |-- Here: https://outlook.live.com/owa/
 Create a new signature
