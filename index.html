@@ -465,12 +465,12 @@
     </style>
   </section>
   <script>
-    document.getElementById("button").addEventListener("click", function () {
-      document.getElementById("logo").style.display = "none";
-      document.getElementById("body").style.backgroundColor = "white";
-      // document.getElementById("table").style.transition = "background 400ms ease";
-      // document.getElementById("table").style.backgroundColor = "transparent";
-    });
+    // document.getElementById("button").addEventListener("click", function () {
+    //   document.getElementById("logo").style.display = "none";
+    //   document.getElementById("body").style.backgroundColor = "white";
+    //   // document.getElementById("table").style.transition = "background 400ms ease";
+    //   // document.getElementById("table").style.backgroundColor = "transparent";
+    // });
 
     const formEl = document.getElementById("form");
     formEl.addEventListener("submit", (e) => {
@@ -513,6 +513,8 @@
 
       formEl.remove();
       document.getElementById("table").style.display = "block";
+      document.getElementById("logo").style.display = "none";
+      document.getElementById("body").style.backgroundColor = "white";
     }
   </script>
 </body>
