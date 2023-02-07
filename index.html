@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>BIMMS Signature Generator</title>
 </head>
 
 <body id="body">
@@ -328,19 +328,19 @@
     <form action="" id="form">
       <div>
         <label for="">Name</label>
-        <input type="text" name="name" id="name" placeholder="" />
+        <input class="inputs" type="text" name="name" id="name" placeholder="" />
       </div>
       <div>
         <label for="">Job title</label>
-        <input type="text" name="job" id="job" placeholder="" />
+        <input class="inputs" type="text" name="job" id="job" placeholder="" />
       </div>
       <div>
         <label for="">Department</label>
-        <input type="text" name="department" id="department" placeholder="" />
+        <input class="inputs" type="text" name="department" id="department" placeholder="" />
       </div>
       <div>
         <label for="">E-mail</label>
-        <input type="text" name="email" id="email" placeholder="" />
+        <input class="inputs" type="text" name="email" id="email" placeholder="" />
       </div>
       <!-- <div>
         <label for="">Phone number</label>
@@ -434,6 +434,7 @@
         border-width: 0;
       }
 
+
       button {
         height: 33px;
         cursor: pointer;
@@ -487,6 +488,11 @@
         // !document.getElementById("phone").value ||
         // !document.getElementById("prefix").value
       ) {
+        document.getElementById("name").style.border = "1px solid red";
+        document.getElementById("job").style.border = "1px solid red";
+        document.getElementById("department").style.border = "1px solid red";
+        document.getElementById("email").style.border = "1px solid red";
+
         window.alert("Fill all fields!");
         return;
       }
