@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body id="body">
   <table id="table" style="
         display: none;
         box-sizing: border-box;
@@ -24,11 +24,14 @@
         font-weight: 400;
         font-size: 11px;
         color: #323232;
-        font-family: Gadugi, Arial, Helvetica, sans-serif;
+        font-family: Arial, Gadugi,  Helvetica, sans-serif;
         overflow: hidden;
         padding: 8px;
-        background-color: #ffffff;
+        /* background-color: #ffffff; */
         height: auto;
+        width: 250px;
+        background-color: transparent;
+     
       ">
     <tr style="
           box-sizing: border-box;
@@ -42,6 +45,7 @@
           border-spacing: 0;
           text-decoration: none;
           display: flex;
+          flex-flow: column;
           margin-bottom: 10px;
         ">
       <td style="
@@ -62,7 +66,18 @@
               mso-line-height-alt: exactly;
               font-weight: 100;
               font-size: 13pt;
-            "></p>
+              
+            "> </p>
+        <p id="vazio" style="
+            margin: 0;
+            padding: 0;
+            border: 0;
+            line-height: 18px;
+            mso-line-height-alt: exactly;
+            font-weight: 100;
+            font-size: 13pt;
+            color: transparent;
+          ">&nbsp</p>
         <p id="bimms-job" style="
               margin: 0;
               padding: 0;
@@ -106,6 +121,18 @@
             <a id="bimms-phone" style="text-decoration: none; color: #323232" cm_dontconvertlink></a>
           </p> -->
       </td>
+    <tr style="display: flex; gap: 8px; 
+    box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          border-collapse: collapse;
+          border-spacing: 0;
+          text-decoration: none;
+          margin-bottom: 10px;">
       <td style="
             margin: 0;
             padding: 0;
@@ -116,7 +143,7 @@
             vertical-align: baseline;
             border-collapse: collapse;
             border-spacing: 0;
-            margin: 0 15px 0 30px;
+            /* margin: 0 15px 0 30px; */
           ">
         <p style="
               margin: 0;
@@ -177,10 +204,11 @@
               border-collapse: collapse;
               border-spacing: 0;
               line-height: 10px;
-              font-size: 10.5pt;
+              font-size: 11pt;
               font-weight: 500;
               font-family: Arial, sans-serif;
               margin-left: 2px;
+              padding-bottom: 20px;
             ">
           integrated <span
             style="font-size: inherit; font-weight: inherit; color: #6fc3c0">engineer</span>ing
@@ -293,8 +321,10 @@
         <img src="https://bimms.net/wp-content/uploads/2023/01/signature.png" alt="" />
       </td>
     </tr>
+    </tr>
   </table>
-  <section>
+  <section id="section">
+    <div class="logo" id="logo"></div>
     <form action="" id="form">
       <div>
         <label for="">Name</label>
@@ -319,7 +349,7 @@
           <input type="tel" name="phone" id="phone" placeholder="927587553" />
         </div>
       </div> -->
-      <button type="submit">Generate signature</button>
+      <button id="button" type="submit">Generate signature</button>
     </form>
     <style>
       * {
@@ -330,15 +360,31 @@
         margin: 0;
         padding: 0;
         border: 0;
+        overflow: hidden;
+        background: #323232;
+        transition: 400ms ease;
+
       }
 
-      section {
+      #section {
         margin: 0;
         width: 100vw;
         height: 100vh;
-        display: grid;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
         grid-template-columns: 100%;
         grid-template-rows: auto 1fr;
+        /* background: #323232; */
+      }
+
+      .logo {
+        width: 400px;
+        height: 150px;
+        background-image: url("./Logowhite.png");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
 
       form {
@@ -349,6 +395,8 @@
         max-width: 600px;
         gap: 12px;
         height: max-content;
+        color: white;
+
       }
 
       form>* {
@@ -369,20 +417,61 @@
 
       label {
         margin-left: 2px;
+        font-family: Gadugi, Helvetica, sans-serif;
+        font-weight: bold;
+        /* background: -webkit-linear-gradient(#6fc3c0, #fff); */
+        background: linear-gradient(to left, #6fc3c0 98%, #fff 5%) right;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       input {
         height: 28px;
+        border-radius: 4px;
+        padding: 4px;
+        outline: 0;
+        border-color: white;
+        border-width: 0;
       }
 
       button {
         height: 33px;
-        background-color: #6fc3c0;
         cursor: pointer;
+        background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%);
+        border: none;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+        scale: 1.02;
+      }
+
+
+      @media only screen and (max-width: 500px) {
+        .logo {
+          width: 200px;
+          height: 100px;
+        }
       }
     </style>
   </section>
   <script>
+    document.getElementById("button").addEventListener("click", function () {
+      document.getElementById("logo").style.display = "none";
+      document.getElementById("body").style.backgroundColor = "white";
+      // document.getElementById("table").style.transition = "background 400ms ease";
+      // document.getElementById("table").style.backgroundColor = "transparent";
+    });
+
     const formEl = document.getElementById("form");
     formEl.addEventListener("submit", (e) => {
       e.preventDefault();
