@@ -8,7 +8,7 @@
   <title>BIMMS Signature Generator</title>
 </head>
 
-<body id="body">
+<body id="body" onload="checkSession()">
   <table id="table" style="
         display: none;
         box-sizing: border-box;
@@ -468,6 +468,7 @@
         background-size: 200% auto;
         color: white;
         border-radius: 4px;
+        margin-top: 20px;
       }
 
       button:hover {
@@ -488,6 +489,12 @@
     </style>
   </section>
   <script>
+
+    function checkSession() {
+      if (!sessionStorage.getItem("loggedIn")) {
+        window.location = "login.html";
+      }
+    }
     // document.getElementById("button").addEventListener("click", function () {
     //   document.getElementById("logo").style.display = "none";
     //   document.getElementById("body").style.backgroundColor = "white";

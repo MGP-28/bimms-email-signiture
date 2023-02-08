@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    function validateForm() {
+      var username = document.forms["loginForm"]["username"].value;
+      var password = document.forms["loginForm"]["password"].value;
+      if (username == "admin" && password == "12345") {
+        sessionStorage.setItem("loggedIn", true);
+        window.location = "index.html";
+        return false;
+      } else {
+        alert("Usuário ou senha inválidos");
+        return false;
+      }
+    }
+  </script>
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #332233;
+      background-image: linear-gradient(180deg, #332233 0%, #6fc3c0 100%);
+
+    }
+
+    .main-wrapper {
+
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .main-box {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+    }
+
+    .logo {
+      width: 300px;
+      height: 150px;
+      background-image: url("./Logowhite.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #323232;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #323232;
+      text-align: left;
+      color: white;
+    }
+
+    .form-container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4285f4;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%);
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;
+      display: block;
+    }
+
+
+    .form-container input[type="submit"]:hover {
+      background-position: right center;
+      /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+      scale: 1.01;
+    }
+
+    /* 
+    .form-container input[type="submit"]:hover {
+      background-color: #357ae8;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="logo" id="logo"></div>
+    <div class="main-box">
+      <div class="form-container">
+        <h1>Login</h1>
+        <form name="loginForm" onsubmit="return validateForm()">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username">
+
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password">
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
