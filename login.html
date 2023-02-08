@@ -14,10 +14,21 @@
         window.location = "index.html";
         return false;
       } else {
-        alert("Usuário ou senha inválidos");
-        return false;
+        var errorDiv = document.getElementById("errorMessage");
+        errorDiv.innerHTML = "";
+        errorDiv.style.display = "none";
+        if (username == "" || password == "") {
+          errorDiv.innerHTML = "Please enter both User and Password";
+          errorDiv.style.display = "block";
+          return false;
+        } else {
+          errorDiv.innerHTML = "Wrong User or Password";
+          errorDiv.style.display = "block";
+          return false;
+        }
       }
     }
+
   </script>
   <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -113,6 +124,26 @@
       scale: 1.01;
     }
 
+    #errorMessage {
+      display: none;
+      padding: 10px;
+      background-color: #ffcdd2;
+      color: #b71c1c;
+      border-radius: 5px;
+      margin-top: 10px;
+      animation: fadein 0.5s;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
     /* 
     .form-container input[type="submit"]:hover {
       background-color: #357ae8;
@@ -126,14 +157,16 @@
     <div class="main-box">
       <div class="form-container">
         <h1>Login</h1>
-        <form name="loginForm" onsubmit="return validateForm()">
-          <label for="username">Usuário:</label>
+
+        <form id="form" name="loginForm" onsubmit="return validateForm()">
+          <div id="errorMessage"></div>
+          <label for="username">User:</label>
           <input type="text" id="username" name="username">
 
-          <label for="password">Senha:</label>
+          <label for="password">Pasword:</label>
           <input type="password" id="password" name="password">
 
-          <input type="submit" value="Submit">
+          <input type="submit" value="LogIn">
         </form>
       </div>
     </div>
