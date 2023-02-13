@@ -7,14 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script>
     function validateForm() {
-      var username = document.forms["loginForm"]["username"].value;
-      var password = document.forms["loginForm"]["password"].value;
+      const username = document.forms["loginForm"]["username"].value;
+      const password = document.forms["loginForm"]["password"].value;
       if (username == "admin" && password == "BIMMS23#!") {
         sessionStorage.setItem("loggedIn", true);
         window.location = "index.html";
         return false;
+
       } else {
-        var errorDiv = document.getElementById("errorMessage");
+        const errorDiv = document.getElementById("errorMessage");
         errorDiv.innerHTML = "";
         errorDiv.style.display = "none";
         if (username == "" || password == "") {
@@ -163,7 +164,7 @@
           <label for="username">User:</label>
           <input type="text" id="username" name="username">
 
-          <label for="password">Pasword:</label>
+          <label for="password">Password:</label>
           <input type="password" id="password" name="password">
 
           <input type="submit" value="LogIn">
