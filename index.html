@@ -293,6 +293,8 @@
         <img src="https://bimms.net/wp-content/uploads/2023/01/signature.png" alt="" />
       </td>
     </tr>
+    <td><button onclick="location.reload()">New Signature</button></td>
+
   </table>
   <section id="section">
     <div class="logo" id="logo"></div>
@@ -333,7 +335,9 @@
         padding: 0;
         border: 0;
         overflow: hidden;
-        background: #323232;
+        /* background: #323232; */
+        background-color: #332233;
+        background-image: linear-gradient(180deg, #332233 10%, #6fc3c0 100%);
         transition: 400ms ease;
 
       }
@@ -369,6 +373,7 @@
         grid-template-columns: 100%;
         grid-template-rows: auto 1fr;
         /* background: #323232; */
+
       }
 
       .logo {
@@ -531,6 +536,7 @@
       document.getElementById("table").style.display = "block";
       document.getElementById("logo").style.display = "none";
       document.getElementById("body").style.backgroundColor = "white";
+      document.getElementById("body").style.backgroundImage = "none";
     }
   </script>
 </body>
